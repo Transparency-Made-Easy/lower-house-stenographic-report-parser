@@ -187,6 +187,8 @@ def _get_lines_with_tags(lines: list[str]):
             result.append(
                 {"type": "SPEAKER", "position": "Poseł Sprawozdawca", "name": name}
             )
+            index += 2
+            continue
 
         elif re.search(SPEAKER_LINE_R, line) and re.search(r"Sekretarz\s+Poseł", line):
             line = re.sub(r"(\s*\.\s*)+\d+", "", line)
