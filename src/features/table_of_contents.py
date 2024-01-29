@@ -378,10 +378,6 @@ def _get_lines_with_complex_info(lines_with_tags):
                 {"type": item["type"], "name": name, "speakers": []}
             )
         elif item["type"] == "SPEAKER":
-            if "speakers" not in lines_with_complex_info[-1]:
-                lines_with_complex_info[-1]["speakers"] = [
-                    "XDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-                ]
             lines_with_complex_info[-1]["speakers"].append(
                 {"position": item["position"], "name": item["name"]}
             )
