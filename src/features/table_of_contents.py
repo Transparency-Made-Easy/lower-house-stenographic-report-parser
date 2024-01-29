@@ -207,6 +207,33 @@ def _get_lines_with_tags(lines: list[str]):
             index += 2
             continue
 
+        elif (
+            re.search(r"Sekretarz", line)
+            and not re.search(SPEAKER_LINE_R, lines[index + 1])
+            and re.search(SPEAKER_LINE_R, lines[index + 2])
+        ):
+            line_with_name = re.sub(r"(\s*\.\s*)+\d+", "", lines[index + 2])
+            matches = re.findall(
+                r"(.*?(ści|ych|sów|cji|ej|ury|rodowiska|ego|Wsi|ogii|yki|drowia))",
+                line_with_name,
+            )
+            end_of_position = matches[0][0].strip() if len(matches) > 0 else ""
+            result.append(
+                {
+                    "type": "SPEAKER",
+                    "position": (
+                        line.strip()
+                        + " "
+                        + lines[index + 1].strip()
+                        + " "
+                        + end_of_position
+                    ).strip(),
+                    "name": line_with_name.replace(end_of_position, "").strip(),
+                }
+            )
+            index += 3
+            continue
+
         elif re.search(r"Przedstawiciel", line) and re.search(
             SPEAKER_LINE_R, lines[index + 1]
         ):
