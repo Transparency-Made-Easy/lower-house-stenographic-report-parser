@@ -14,6 +14,9 @@ class TestReportToObj(unittest.TestCase):
         self.assertEqual(obj["sitting_number"], "1")
         self.assertEqual(obj["session_date"].isoformat(), "2023-11-13T00:00:00")
         self.assertEqual(obj["session_start"].isoformat(), "12:07:00")
+        self.assertEqual(obj["speaker_senior"], "Marek Sawicki")
+        self.assertEqual(obj["speaker"], "Szymon Hołownia")
+        self.assertEqual(obj["vicespeakers"], [])
         self.assertEqual(
             obj["table_of_contents"],
             [
@@ -123,6 +126,9 @@ class TestReportToObj(unittest.TestCase):
         self.assertEqual(obj["sitting_number"], "1")
         self.assertEqual(obj["session_date"].isoformat(), "2023-11-14T00:00:00")
         self.assertEqual(obj["session_start"].isoformat(), "16:33:00")
+        self.assertEqual(obj["speaker_senior"], None)
+        self.assertEqual(obj["speaker"], "Szymon Hołownia")
+        self.assertEqual(obj["vicespeakers"], [])
         self.assertEqual(
             obj["table_of_contents"],
             [
@@ -217,6 +223,9 @@ class TestReportToObj(unittest.TestCase):
         self.assertEqual(obj["sitting_number"], "1")
         self.assertEqual(obj["session_date"].isoformat(), "2023-11-21T00:00:00")
         self.assertEqual(obj["session_start"].isoformat(), "12:04:00")
+        self.assertEqual(obj["speaker_senior"], None)
+        self.assertEqual(obj["speaker"], "Szymon Hołownia")
+        self.assertEqual(obj["vicespeakers"], [])
         self.assertEqual(
             obj["table_of_contents"],
             [
@@ -369,6 +378,9 @@ class TestReportToObj(unittest.TestCase):
         self.assertEqual(obj["sitting_number"], "1")
         self.assertEqual(obj["session_date"].isoformat(), "2023-11-22T00:00:00")
         self.assertEqual(obj["session_start"].isoformat(), "11:06:00")
+        self.assertEqual(obj["speaker_senior"], None)
+        self.assertEqual(obj["speaker"], None)
+        self.assertEqual(obj["vicespeakers"], ["Piotr Zgorzelski", "Dorota Niedziela"])
         self.assertEqual(
             obj["table_of_contents"],
             [
@@ -533,6 +545,17 @@ class TestReportToObj(unittest.TestCase):
         self.assertEqual(obj["sitting_number"], "1")
         self.assertEqual(obj["session_date"].isoformat(), "2023-11-28T00:00:00")
         self.assertEqual(obj["session_start"].isoformat(), "12:05:00")
+        self.assertEqual(obj["speaker_senior"], None)
+        self.assertEqual(obj["speaker"], "Szymon Hołownia")
+        self.assertEqual(
+            obj["vicespeakers"],
+            [
+                "Włodzimierz Czarzasty",
+                "Piotr Zgorzelski",
+                "Monika Wielichowska",
+                "Dorota Niedziela",
+            ],
+        )
         self.assertEqual(
             obj["table_of_contents"],
             [
@@ -862,6 +885,18 @@ class TestReportToObj(unittest.TestCase):
         self.assertEqual(obj["sitting_number"], "1")
         self.assertEqual(obj["session_date"].isoformat(), "2023-11-29T00:00:00")
         self.assertEqual(obj["session_start"].isoformat(), "09:04:00")
+        self.assertEqual(obj["speaker_senior"], None)
+        self.assertEqual(obj["speaker"], "Szymon Hołownia")
+        self.assertEqual(
+            obj["vicespeakers"],
+            [
+                "Włodzimierz Czarzasty",
+                "Dorota Niedziela",
+                "Piotr Zgorzelski",
+                "Monika Wielichowska",
+                "Krzysztof Bosak",
+            ],
+        )
         self.assertEqual(
             obj["table_of_contents"],
             [
@@ -1302,6 +1337,17 @@ class TestReportToObj(unittest.TestCase):
         self.assertEqual(obj["sitting_number"], "1")
         self.assertEqual(obj["session_date"].isoformat(), "2023-12-06T00:00:00")
         self.assertEqual(obj["session_start"].isoformat(), "09:03:00")
+        self.assertEqual(obj["speaker_senior"], None)
+        self.assertEqual(obj["speaker"], "Szymon Hołownia")
+        self.assertEqual(
+            obj["vicespeakers"],
+            [
+                "Piotr Zgorzelski",
+                "Krzysztof Bosak",
+                "Dorota Niedziela",
+                "Włodzimierz Czarzasty",
+            ],
+        )
         self.assertEqual(
             obj["table_of_contents"],
             [
@@ -1579,6 +1625,12 @@ class TestReportToObj(unittest.TestCase):
         self.assertEqual(obj["sitting_number"], "1")
         self.assertEqual(obj["session_date"].isoformat(), "2023-12-07T00:00:00")
         self.assertEqual(obj["session_start"].isoformat(), "09:07:00")
+        self.assertEqual(obj["speaker_senior"], None)
+        self.assertEqual(obj["speaker"], "Szymon Hołownia")
+        self.assertEqual(
+            obj["vicespeakers"],
+            ["Dorota Niedziela", "Monika Wielichowska", "Piotr Zgorzelski"],
+        )
         self.assertEqual(
             obj["table_of_contents"],
             [
