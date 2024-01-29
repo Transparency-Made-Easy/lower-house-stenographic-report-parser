@@ -387,6 +387,9 @@ def _get_lines_with_tags(lines: list[str]):
         elif re.search(r"Sprawy\s+formalne", line):
             result.append({"type": "HEADER", "text": line})
 
+        elif re.search(r"Punkt\s+\d+\s*\.\s+porządku\s+dziennego", line):
+            result.append({"type": "HEADER", "text": line})
+
         elif len(result) > 0 and result[-1]["type"] == "HEADER":
             result[-1]["text"] += " " + line
         else:
