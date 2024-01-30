@@ -16,7 +16,7 @@ def report_to_obj(file_path):
         "term": get_term(pages[0]),
         "sitting_number": get_sitting_number(pages[0]),
         "session_date": get_session_date(pages[0]),
-        "table_of_contents": get_table_of_contents(pages),
+        "table_of_contents": get_table_of_contents(pages, speakers[1]),
         "session_start": get_session_start(pages),
         "speaker_senior": speakers[0],
         "speaker": speakers[1],

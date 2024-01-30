@@ -75,7 +75,7 @@ class TestReportToObj(unittest.TestCase):
                     "type": "VOTING",
                     "speakers": [
                         {"position": "Marszałek Senior", "name": "Marek Sawicki"},
-                        {"position": "Marszałek", "name": "Marszałek"},
+                        {"position": "Marszałek", "name": "Szymon Hołownia"},
                     ],
                 },
                 {"type": "BREAK"},
@@ -94,7 +94,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {"type": "BREAK"},
                 {"type": "RESUME OBRADY"},
@@ -111,7 +111,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {"type": "BREAK"},
             ],
@@ -136,7 +136,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -145,7 +145,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -154,7 +154,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -163,7 +163,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -208,7 +208,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {"type": "BREAK"},
             ],
@@ -233,7 +233,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -284,7 +284,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -293,7 +293,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -302,7 +302,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -314,7 +314,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -333,7 +333,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -563,7 +563,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -614,7 +614,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -634,7 +634,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -643,7 +643,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -652,7 +652,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {"type": "BREAK"},
                 {"type": "RESUME OBRADY"},
@@ -911,7 +911,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -933,7 +933,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1198,7 +1198,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1214,7 +1214,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1223,7 +1223,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1259,7 +1259,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1271,7 +1271,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1290,7 +1290,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1362,7 +1362,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1512,7 +1512,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1521,7 +1521,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1561,7 +1561,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "VOTING",
                     "speakers": [
-                        {"position": "Marszałek", "name": "Marszałek"},
+                        {"position": "Marszałek", "name": "Szymon Hołownia"},
                         {"position": "Poseł", "name": "Łukasz Schreiber"},
                         {"position": "Poseł", "name": "Kazimierz Smoliński"},
                         {"position": "Poseł", "name": "Bogdan Andrzej Zdrojewski"},
@@ -1715,7 +1715,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {"type": "BREAK"},
                 {"type": "RESUME OBRADY"},
@@ -1827,7 +1827,7 @@ class TestReportToObj(unittest.TestCase):
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1863,7 +1863,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1877,7 +1877,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1900,7 +1900,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1916,7 +1916,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1925,7 +1925,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {
                     "type": "HEADER",
@@ -1934,7 +1934,7 @@ class TestReportToObj(unittest.TestCase):
                 },
                 {
                     "type": "VOTING",
-                    "speakers": [{"position": "Marszałek", "name": "Marszałek"}],
+                    "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {"type": "BREAK"},
                 {"type": "RESUME OBRADY"},

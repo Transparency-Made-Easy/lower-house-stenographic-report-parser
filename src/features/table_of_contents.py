@@ -6,13 +6,13 @@ from src.features.session_start import get_session_start, get_session_start_from
 SPEAKER_LINE_R = r"\.\s+\.\s*\d+$"
 
 
-def get_table_of_contents(pages):
+def get_table_of_contents(pages, speaker_name: str):
     # Almost raw lines
     raw_lines = _get_table_of_contents_lines(pages)
     # print("raw_lines", obj2pretty_json(list(raw_lines)))
 
     # These lines have added info like is it headerm is it speaker, but have no complex objects inside
-    lines_with_tags = _get_lines_with_tags(raw_lines)
+    lines_with_tags = _get_lines_with_tags(raw_lines, speaker_name)
     # print("lines_with_tags", obj2pretty_json(lines_with_tags))
 
     lines_with_complex_info = _get_lines_with_complex_info(lines_with_tags)
@@ -143,7 +143,7 @@ def _split_line_with_voting(line):
     return [line[: -len("Głosowanie")], "Głosowanie"]
 
 
-def _get_lines_with_tags(lines: list[str]):
+def _get_lines_with_tags(lines: list[str], speaker_name: str):
     result = []
 
     index = 0
@@ -168,7 +168,7 @@ def _get_lines_with_tags(lines: list[str]):
             line = re.sub(r"(\s*\.\s*)+\d+", "", line)
             line = re.sub(r"Marszałek\s*", "", line)
             result.append(
-                {"type": "SPEAKER", "position": "Marszałek", "name": "Marszałek"}
+                {"type": "SPEAKER", "position": "Marszałek", "name": speaker_name}
             )
 
         elif re.search(SPEAKER_LINE_R, line) and re.search(
