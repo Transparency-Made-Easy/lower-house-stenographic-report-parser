@@ -157,6 +157,9 @@ def _get_lines_with_tags(lines: list[str], speaker_name: str):
         elif re.search(r"\s*Wznowienie\s+posiedzenia\s*", line):
             result.append({"type": "RESUME POSIEDZENIE"})
 
+        elif re.search(r"Ślubowanie\s+poselskie", line):
+            result.append({"type": "HEADER", "text": line})
+
         elif re.search(SPEAKER_LINE_R, line) and re.search(r"Marszałek\s+Senior", line):
             line = re.sub(r"(\s*\.\s*)+\d+", "", line)
             line = re.sub(r"Marszałek\s+Senior\s*", "", line)
