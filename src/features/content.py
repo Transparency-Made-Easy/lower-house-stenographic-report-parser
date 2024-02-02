@@ -68,6 +68,15 @@ def get_content_text(pages, header_names):
         page = re.sub(r"^\.", "", page).strip()
         page = re.sub(r"\.$", "", page).strip()
         page = remove_header(page, header_names)
+        page = re.sub(
+            r"\*\s*\)\s*Teksty\s+wystąpień\s+niewygłoszonych\s+w\s+załączniku\s*",
+            "",
+            page,
+        ).strip()
+
+        page = "\n".join(
+            [line.strip() for line in page.split("\n") if len(line.strip()) > 0]
+        )
 
         # print(page)
         # print("--------------------------------------------------")
@@ -224,15 +233,23 @@ def get_content_page_range(pages):
 
     for i, page in enumerate(pages):
         if start is None and re.search(
-            # (Wznowienie posiedzenia o godz. 16 min 33)
             r"\(\s*(Początek|Wznowienie)\s+posiedzenia\s+o\s+godz\s*\.\s+\d+\s+min\s+\d+\s*\)",
             page,
         ):
             start = i
 
-        if start is not None and re.search(
-            r"TŁOCZONO\s+Z\s+POLECENIA\s+MARSZAŁKA\s+SEJMU\s+RZECZYPOSPOLITEJ\s+POLSKIEJ",
-            page,
+        if start is not None and (
+            re.search(r"Teksty\s+wystąpień\s+niewygłoszonych", page)
+            and re.search(r"Załącznik", page)
+        ):
+            end = i - 1
+            break
+
+        if start is not None and (
+            re.search(
+                r"TŁOCZONO\s+Z\s+POLECENIA\s+MARSZAŁKA\s+SEJMU\s+RZECZYPOSPOLITEJ\s+POLSKIEJ",
+                page,
+            )
         ):
             end = i
             break
@@ -257,8 +274,7 @@ def merge_consecutive_brackets(text):
     for i, line in enumerate(lines):
         line = line.strip()
         if (
-            line.startswith("(")
-            and (i > 0 and lines[i - 1] == "")
+            line.startswith("(") and (i > 0 and lines[i - 1] == "")
             # and (i + 1 < len(lines) and lines[i + 1] == "")
         ):
             bracket_text += line
