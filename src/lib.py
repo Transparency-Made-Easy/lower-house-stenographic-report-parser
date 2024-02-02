@@ -1,4 +1,5 @@
 import re
+from src.features.breaks import get_breaks
 from src.features.content import get_content_text
 from src.features.speaker import get_speaker_of_the_session
 from src.features.table_of_contents import get_table_of_contents
@@ -15,6 +16,8 @@ def report_to_obj(file_path):
 
     speakers = get_speaker_of_the_session(pages)
     table_of_contents = get_table_of_contents(pages, speakers[1])
+
+    # TODO: Extract this logic
     header_names = list(
         set(
             [
@@ -31,11 +34,12 @@ def report_to_obj(file_path):
         "term": get_term(pages[0]),
         "sitting_number": get_sitting_number(pages[0]),
         "session_date": get_session_date(pages[0]),
-        "table_of_contents": table_of_contents,
         "session_start": get_session_start(pages),
         "speaker_senior": speakers[0],
         "speaker": speakers[1],
         "vicespeakers": speakers[2],
+        "breaks": get_breaks(pages2),
+        "table_of_contents": table_of_contents,
         "text": get_content_text(pages2, header_names),
     }
 
