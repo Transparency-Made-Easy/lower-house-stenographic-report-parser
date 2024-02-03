@@ -10,6 +10,7 @@ def get_table_of_contents(pages, speaker_name: str):
     # Almost raw lines
     raw_lines = _get_table_of_contents_lines(pages)
     # print("raw_lines", obj2pretty_json(list(raw_lines)))
+    # exit()
 
     # These lines have added info like is it headerm is it speaker, but have no complex objects inside
     lines_with_tags = _get_lines_with_tags(raw_lines, speaker_name)
@@ -398,6 +399,15 @@ def _get_lines_with_tags(lines: list[str], speaker_name: str):
             line = re.sub(r"(\s*\.\s*)+\d+", "", line)
             result.append(
                 {"type": "SPEAKER", "position": "Marszałek Senior", "name": line}
+            )
+
+        elif re.search(SPEAKER_LINE_R, line) and re.search(
+            r"Prezes\s+Rady\s+Ministrów", line
+        ):
+            line = re.sub(r"(\s*\.\s*)+\d+", "", line)
+            line = re.sub(r"Prezes\s+Rady\s+Ministrów\s*", "", line)
+            result.append(
+                {"type": "SPEAKER", "position": "Prezes Rady Ministrów", "name": line}
             )
 
         elif re.search(r"Prezes\s+Rady\s+Ministrów", line) and re.search(
