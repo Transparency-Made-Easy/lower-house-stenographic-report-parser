@@ -7,9 +7,8 @@ def get_session_date(text):
     match = re.search(expression, text)
     if match:
         day = int(match.group(1))
-        month_str = match.group(2)
+        month = month_str_to_u32(match.group(2))
         year = int(match.group(3))
-        month = month_str_to_u32(month_str)
         return datetime(year, month, day)
     return None
 

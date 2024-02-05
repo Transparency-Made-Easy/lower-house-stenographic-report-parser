@@ -1,7 +1,6 @@
 import re
+from src.features.session_start_time import find_session_start_time
 from src.custom_json import obj2pretty_json
-
-from src.features.session_start import get_session_start, get_session_start_from_text
 
 SPEAKER_LINE_R = r"\.\s+\.\s*\d+$"
 
@@ -38,7 +37,7 @@ def _get_table_of_contents_pages_range(pages) -> (int, int):
         elif (
             start is not None
             and end is None
-            and get_session_start_from_text(page) is not None
+            and find_session_start_time(page) is not None
         ):
             end = i
             break
