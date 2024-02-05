@@ -1,5 +1,6 @@
 import re
 
+from src.features.sitting_day import get_sitting_day
 from src.features.sitting_end_time import get_sitting_end_time
 from src.features.sitting_start_time import get_sitting_start_time
 from src.features.session_end_time import get_session_end_time
@@ -37,9 +38,9 @@ def report_to_obj(file_path):
     obj = {
         "term_number": get_term(pages_dict[0]),
         "sitting_number": get_sitting_number(pages_dict[0]),
+        "sitting_day": get_sitting_day(pages_list),
         "sitting_start_time": get_sitting_start_time(pages_list),
         "sitting_end_time": get_sitting_end_time(pages_list),
-        # TODO: session_day_number
         "session_date": get_session_date(pages_dict[0]),
         "session_start_time": get_session_start_time(pages_list),
         "session_end_time": get_session_end_time(pages_list),
