@@ -155,8 +155,15 @@ def get_content_text(pages, header_names):
         item["content"] = re.sub(r"\s+", " ", item["content"].strip())
         item["speaker"] = re.sub(r"\s+", " ", item["speaker"].strip())
         item["content"] = re.sub(regex, "", item["content"]).strip()
+
         item["content"] = re.sub(
             r"\(Przerwa\s+w\s+posiedzeniu\s+od?\s+godz\.\s+\d+\s+min\s+\d+.*?\)",
+            "",
+            item["content"],
+        ).strip()
+
+        item["content"] = re.sub(
+            r"\(\s*Koniec\s+posiedzenia\s+o\s+godz\.\s+\d+\s+min\s+\d+\s*\)",
             "",
             item["content"],
         ).strip()
@@ -241,6 +248,16 @@ def get_content_page_range(pages):
         if start is not None and (
             re.search(r"Teksty\s+wystąpień\s+niewygłoszonych", page)
             and re.search(r"Załącznik", page)
+        ):
+            end = i - 1
+            break
+
+        if start is not None and (
+            re.search(
+                r"Porządek\s+dzienny",
+                page,
+            )
+            and re.search(r"posiedzenia\s+Sejmu\s+Rzeczypospolitej\s+Polskiej", page)
         ):
             end = i - 1
             break
