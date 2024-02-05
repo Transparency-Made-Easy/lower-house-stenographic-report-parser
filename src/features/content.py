@@ -66,13 +66,16 @@ def get_content_text(pages, header_names):
         page = remove_header(page, header_names)
         page = re.sub(r"^\s*(–|-)\s*głosowanie", "", page).strip()
         page = re.sub(r"^\.", "", page).strip()
-        page = re.sub(r"\.$", "", page).strip()
         page = remove_header(page, header_names)
         page = re.sub(
             r"\*\s*\)\s*Teksty\s+wystąpień\s+niewygłoszonych\s+w\s+załączniku\s*",
             "",
             page,
         ).strip()
+        page = re.sub(r"^\s*poselskie\s*\n?\s*", "", page)
+        page = re.sub(r"^\s*\d+\s*\n?\s*", "", page)
+        page = re.sub(r"\s*\)[\s\n]*\.$", ")", page).strip()
+        page = re.sub(r"\.+$", ".", page).strip()
 
         page = "\n".join(
             [line.strip() for line in page.split("\n") if len(line.strip()) > 0]
@@ -146,6 +149,8 @@ def get_content_text(pages, header_names):
                 text[-1]["content"] += line + " "
 
             i += 1
+
+    # exit()
 
     speakers = [item["speaker"].strip() for item in text]
     regex = r"(" + "|".join(speakers) + r")$"
