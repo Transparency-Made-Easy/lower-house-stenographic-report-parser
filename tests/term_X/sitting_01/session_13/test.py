@@ -14,6 +14,7 @@ class SessionReport(unittest.TestCase):
 
         self.assertEqual(obj["term_number"], "X")
         self.assertEqual(obj["sitting_number"], "1")
+        self.assertEqual(obj["sitting_day"], 13)
         self.assertEqual(obj["sitting_start_time"], None)
         self.assertEqual(obj["sitting_end_time"], time(20, 8))
         self.assertEqual(obj["session_date"].isoformat(), "2023-12-21T00:00:00")
@@ -58,7 +59,7 @@ class SessionReport(unittest.TestCase):
                     ],
                 },
                 {"type": "BREAK"},
-                {"type": "RESUME OBRADY", "speakers": []},
+                {"type": "RESUME OBRADY"},
                 {
                     "type": "HEADER",
                     "name": "Sprawy formalne",
@@ -288,7 +289,7 @@ class SessionReport(unittest.TestCase):
                     ],
                 },
                 {"type": "BREAK"},
-                {"type": "RESUME OBRADY", "speakers": []},
+                {"type": "RESUME OBRADY"},
                 {
                     "type": "HEADER",
                     "name": "Zmiana porządku dziennego",

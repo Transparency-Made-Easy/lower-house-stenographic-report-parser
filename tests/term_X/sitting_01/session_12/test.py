@@ -14,6 +14,7 @@ class SessionReport(unittest.TestCase):
 
         self.assertEqual(obj["term_number"], "X")
         self.assertEqual(obj["sitting_number"], "1")
+        self.assertEqual(obj["sitting_day"], 12)
         self.assertEqual(obj["sitting_start_time"], None)
         self.assertEqual(obj["sitting_end_time"], None)
         self.assertEqual(obj["session_date"].isoformat(), "2023-12-20T00:00:00")

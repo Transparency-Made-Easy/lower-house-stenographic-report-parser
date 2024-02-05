@@ -14,6 +14,7 @@ class SessionReport(unittest.TestCase):
 
         self.assertEqual(obj["term_number"], "X")
         self.assertEqual(obj["sitting_number"], "1")
+        self.assertEqual(obj["sitting_day"], 10)
         self.assertEqual(obj["sitting_start_time"], None)
         self.assertEqual(obj["sitting_end_time"], None)
         self.assertEqual(obj["session_date"].isoformat(), "2023-12-12T00:00:00")
@@ -76,7 +77,7 @@ class SessionReport(unittest.TestCase):
                     ],
                 },
                 {"type": "BREAK"},
-                {"type": "RESUME OBRADY", "speakers": []},
+                {"type": "RESUME OBRADY"},
                 {
                     "type": "HEADER",
                     "name": "Punkt 38. porządku dziennego (cd.)",
@@ -228,7 +229,7 @@ class SessionReport(unittest.TestCase):
                     ],
                 },
                 {"type": "BREAK"},
-                {"type": "RESUME OBRADY", "speakers": []},
+                {"type": "RESUME OBRADY"},
                 {
                     "type": "HEADER",
                     "name": "Sprawy formalne",
@@ -239,7 +240,7 @@ class SessionReport(unittest.TestCase):
                     ],
                 },
                 {"type": "BREAK"},
-                {"type": "RESUME OBRADY", "speakers": []},
+                {"type": "RESUME OBRADY"},
                 {
                     "type": "HEADER",
                     "name": "Sprawy formalne",
@@ -253,7 +254,7 @@ class SessionReport(unittest.TestCase):
                     ],
                 },
                 {"type": "BREAK"},
-                {"type": "RESUME OBRADY", "speakers": []},
+                {"type": "RESUME OBRADY"},
                 {
                     "type": "HEADER",
                     "name": "Sprawy formalne",
@@ -363,7 +364,7 @@ class SessionReport(unittest.TestCase):
                     "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {"type": "BREAK"},
-                {"type": "RESUME OBRADY", "speakers": []},
+                {"type": "RESUME OBRADY"},
                 {
                     "type": "HEADER",
                     "name": "Punkt 38. porządku dziennego: Przedstawienie przez Prezesa Rady Ministrów programu działania oraz składu Rady Ministrów wraz z wnioskiem w sprawie wyboru członków Rady Ministrów (cd.)",
@@ -400,7 +401,7 @@ class SessionReport(unittest.TestCase):
                     "speakers": [{"position": "Marszałek", "name": "Szymon Hołownia"}],
                 },
                 {"type": "BREAK"},
-                {"type": "RESUME OBRADY", "speakers": []},
+                {"type": "RESUME OBRADY"},
                 {
                     "type": "HEADER",
                     "name": "Oświadczenia",
