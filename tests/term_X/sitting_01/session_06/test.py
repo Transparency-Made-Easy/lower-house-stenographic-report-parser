@@ -10,6 +10,7 @@ class SessionReport(unittest.TestCase):
         file_path = get_file_path_in_same_folder(__file__, "01_f_ksiazka.pdf")
         obj = report_to_obj(file_path)
         # print(obj2pretty_json(obj))
+        # exit()
 
         self.assertEqual(obj["term_number"], "X")
         self.assertEqual(obj["sitting_number"], "1")
@@ -2748,5 +2749,22 @@ class SessionReport(unittest.TestCase):
                     "speaker": "Wicemarszałek Krzysztof Bosak",
                     "content": "Dziękuję bardzo, panie pośle. Na tym zakończyliśmy oświadczenia poselskie*). Chciałbym bardzo serdecznie podziękować całemu personelowi, który tutaj z nami dotrwał do końca, z sekretariatu posiedzeń i odpowiedzialnemu za stenografię. Zarządzam przerwę w posiedzeniu do dnia 6 grudnia 2023 r. do godz. 9. Dobrej nocy. (Oklaski)",
                 },
+            ],
+        )
+        self.assertEqual(
+            obj["session_not_delivered_speeches"],
+            [
+                {
+                    "type": "HEADER",
+                    "name": "Oświadczenia poselskie",
+                    "speakers": [
+                        {
+                            "position": "Poseł",
+                            "speaker": "Grzegorz Lorek",
+                            "parliamentary_group": "Klub Parlamentarny Prawo i Sprawiedliwość",
+                            "content": "Bitwa pod Krzywopłotami W trakcie I wojny światowej została stoczona przez legiony bitwa nieopodal wsi Krzywopłoty, na częściowo podmokłych terenach między Bydlinem a Załężem w dniach 17–18 listopada 1914 r. Należy przypomnieć to wydarzenie, które w swoim wymiarze kształtowało siłę odradzającego się Wojska Polskiego. Bitwa legionistów Józefa Piłsudskiego z 4. i 6. batalionu 1. pułku piechoty legionów, których dowódcami byli kpt. Tadeusz Furgalski „Wyrwa” i kpt. Herwina, oraz artylerzystów pod dowództwem kpt. Brzozy, razem ok. 1400 żołnierzy, z oddziałami Rosji carskiej miała powstrzymać ofensywę tych ostatnich. Legioniści okopali się na Wzgórzu Św. Krzyża we wsi Bydlin i sąsiednich Krzywopłotach. Wojska rosyjskie zajęły pozycje w lasach Smolenia i Domaniewic. W wyniku toczonej ze zmiennym szczęściem bitwy obie strony poniosły duże straty. W ataku na Załęże poległ por. Stanisław Paderewski, brat przyrodni Ignacego Paderewskiego, dowódca 3. kompanii 6. batalionu. W bitwie zginęło 46 legionistów, a 131 było rannych i dostało się do niewoli. Bitwa powstrzymała rosyjskie natarcie. Polegli legioniści spoczywają na cmentarzu w Bydlinie. W innej kwaterze cmentarza spoczywają żołnierze austriaccy i rosyjscy. Miejsce bitwy Józef Piłsudski nazwał krzywopłockimi legionowymi Termopilami. W 1920 r., z inicjatywy Piłsudskiego, na cmentarzu w Bydlinie stanął pomnik – kilkumetrowy kamienny krzyż zdobiony legionowymi symbolami. Żywym pomnikiem tych wydarzeń jest szkoła wybudowana w 1937 r. z inicjatywy i za pieniądze legionistów, dla upamiętnienia tej bitwy. W 95. rocznicę bitwy mieszkańcy Bydlina postawili obelisk z krzyżem i dwiema tablicami. Na tablicach wyryto nazwiska poległych legionistów.",
+                        }
+                    ],
+                }
             ],
         )

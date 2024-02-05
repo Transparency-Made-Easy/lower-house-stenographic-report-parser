@@ -1,5 +1,8 @@
 import re
 
+from src.features.session_not_delivered_speeches import (
+    get_session_not_delivered_speeches,
+)
 from src.features.sitting_day import get_sitting_day
 from src.features.sitting_end_time import get_sitting_end_time
 from src.features.sitting_start_time import get_sitting_start_time
@@ -18,6 +21,8 @@ from src.pdf import get_pages, pdf2text
 def report_to_obj(file_path):
     pages_dict = get_pages(file_path)
     pages_list = pdf2text(file_path)
+
+    not_delivered_speeches = get_session_not_delivered_speeches(pages_list)
 
     speakers = get_speaker_of_the_session(pages_dict)
     table_of_contents = get_table_of_contents(pages_dict, speakers[1])
@@ -50,6 +55,7 @@ def report_to_obj(file_path):
         "vicespeakers": speakers[2],
         "table_of_contents": table_of_contents,
         "content": get_content_text(pages_list, header_names),
+        "session_not_delivered_speeches": not_delivered_speeches,
     }
 
     return obj

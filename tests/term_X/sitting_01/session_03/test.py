@@ -521,3 +521,4 @@ class SessionReport(unittest.TestCase):
                 },
             ],
         )
+        self.assertEqual(obj["session_not_delivered_speeches"], [])

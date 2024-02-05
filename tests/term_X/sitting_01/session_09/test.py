@@ -10,6 +10,7 @@ class SessionReport(unittest.TestCase):
         file_path = get_file_path_in_same_folder(__file__, "01_i_ksiazka.pdf")
         obj = report_to_obj(file_path)
         # print(obj2pretty_json(obj))
+        # exit()
 
         self.assertEqual(obj["term_number"], "X")
         self.assertEqual(obj["sitting_number"], "1")
@@ -2130,5 +2131,22 @@ class SessionReport(unittest.TestCase):
                     "speaker": "Wicemarszałek Krzysztof Bosak",
                     "content": "Dziękuję bardzo, panie pośle. Na tym zakończyliśmy oświadczenia poselskie*). Dobrej nocy jedynemu posłowi, który pozostał z nami na sali. Dobrej nocy personelowi Kancelarii Sejmu, który pomógł nam w organizacji tej części posiedzenia Sejmu. Dobrej nocy tym wszystkim, którzy być może przez Internet śledzili nasze obrady do końca. Zarządzam przerwę w posiedzeniu do dnia 12 grudnia 2023 r. do godz. 10.",
                 },
+            ],
+        )
+        self.assertEqual(
+            obj["session_not_delivered_speeches"],
+            [
+                {
+                    "type": "HEADER",
+                    "name": "Oświadczenia poselskie",
+                    "speakers": [
+                        {
+                            "position": "Poseł",
+                            "speaker": "Grzegorz Lorek",
+                            "parliamentary_group": "Klub Parlamentarny Prawo i Sprawiedliwość",
+                            "content": "10 grudnia 1874 r. we wsi Kłoda Mała koło Białej Podlaskiej w proteście przeciw szykanom związanym z narzuceniem przez władze rosyjskie wyznania prawosławnego samospalenia dokonała rodzina Koniuszewskich – rodzice z dwójką małych dzieci. Józef Koniuszewski za odmowę porzucenia grekokatolicyzmu miał zostać pobity, obciążony podatkami i zamknięty w areszcie. Desperacką decyzję podjął na wieść o przymusowym chrzcie córki w cerkwi prawosławnej. Pod koniec lata 1874 r. rosyjskie wojsko siłą zmusiło wszystkich parafian unickiej cerkwi pw. Przemienienia Pańskiego w Horbowie do zgromadzenia się przed cerkwią, by ich przepisać na prawosławie. Jedni, nie mogąc znieść bestialstwa Rosjan, zmieniali wiarę. Inni z sobie tylko znaną siłą wewnętrzną przeciwstawiali się i nie chcieli zmienić obrządku. Na opornych gospodarzy nakładano kontrybucję. Wśród broniących się unitów ogromną dzielność wykazał Józef Koniuszewski. Pochodził z rodziny unickiej zamieszkałej w Dąbrowicy Małej. Ożenił się z Anastazją Lesiuk z Połosek. Tam urodziła się ich córeczka Ewa. Wkrótce osiedlili się w Ukażnej (dzi-siejsza Kłoda Mała) na terenie parafii Horbów. Kiedy zaczęło się nawracanie na prawosławie, nie zgodził się na zmianę wiary. Dla podkreślenia swojej tożsamości powtarzał: Ja Polak i katolik. Taka postawa wzmogła jeszcze bardziej złość i nienawiść kozackich żołnierzy. Pobity, poraniony powoli wracał do zdrowia, jak wielu jemu podobnych. Dodatkowo jego los skomplikował się, kiedy odkryto, że jego żona ma urodzić dziecko. Uznano, że noworodka będzie musiał ochrzcić w cerkwi, i to jak najszybciej po urodzeniu. Śledzono brzemienną Anastazję. Dziecko przyszło na świat 7 października 1874 r. Kiedy Koniuszewski odmówił ochrzczenia dziecka w cerkwi, osadzono go w bialskim więzieniu. Powrócił z niego zmaltretowany, ale nieugięty. Carat zaczął nakładać kary pieniężne. Była późna jesień, kiedy Koniuszewskim zabrakło pieniędzy. Wówczas zabrano im pościel i ciepłe ubrania. Zostały tylko świnia i krowa, a i te wkrótce zarekwirowano. Koniuszewski był zrozpaczony. Zbliżała się zima, a jego rodzinę pozbawiono wszystkiego. Pozostały im tylko dom i niewielkie budynki gospodarcze. Pracy też nie mógł znaleźć, bo w okolicznych dworach obawiano się zatrudnić człowieka pozostającego pod nadzorem. Życzliwi ludzie radzili mu, by udał się do hrabiny Łubieńskiej do Kolana. Słynęła ona z pomocy unitom, ale umęczony Koniuszewki nie miał ani siły, ani ubrania na taką podróż, zwłaszcza że jesienne dni były coraz zimniejsze, a droga do Kolana daleka. Przyszedł grudzień, gdy otrzymał wiadomość, że dziecko mają zabrać, zanieść do cerkwi i tam ochrzcić. To było ponad siły tego umęczonego fizycznie i upokorzonego człowieka. Żona upiekła z resztek mąki chleb. Potem oboje odwiedzali sąsiadów, przepraszali i powiadamiali, że wybierają się w drogę. Dokąd się wybierają, nie powiedzieli. Jak wspominali mieszkańcy, tamten grudniowy wieczór był zimny, padał śnieg, wiał lodowaty wiatr. Zbliżała się godz. 22.00. Ktoś zauważył pożar, ludzie wybiegali z domów. W sąsiedniej wsi rozległ się dzwon na trwogę. Płonęła stodoła Koniuszewskich. Zdezorientowani sąsiedzi wbiegli do ich domu. W maleńkiej izbie zobaczyli stół zastawiony do wieczerzy, tylko gospodarzy przy nim nie było. Pierwsza myśl, jaka nasunęła się ludziom, to ta, że Koniuszewscy już wyszli, są gdzieś w drodze i nawet nie wiedzą, że ich zagroda się pali. Ogień przybierał na sile i nagle wśród trzasku płomieni do zebranych ludzi dotarły słowa pieśni modlitwy. Wszyscy pojęli, w jaką drogę wyruszyli znękani, umęczeni Koniuszewscy. Zgromadzonym zabrakło sił, ogień rozprzestrzeniał się coraz bardziej, było za późno na ratunek. Dnia 10 grudnia 1874 r. późnym wieczorem rodzina Koniuszewskich zginęła w płomieniach, oddając swoje życie w obronie wiary. Nazajutrz w zgliszczach stodoły znaleziono ciała Józefa, Anastazji, 3-letniej Ewy i 3-miesięcznej Łucji – takie imię dali rodzice swojej nowonarodzonej córeczce, chrzcząc ją z wody. Władze zezwoliły na pogrzeb. Ich ciała złożono w dwóch trumnach w jednej mogile. Wiadomość o męczeńskiej śmierci szybko rozeszła się po świecie. Dyplomaci państw europejskich pracujący w Warszawie i Petersburgu informowali swoje władze o tym tragicznym wydarzeniu. Jednak państwa Europy milczały.",
+                        }
+                    ],
+                }
             ],
         )

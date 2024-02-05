@@ -2515,6 +2515,7 @@ class SessionReport(unittest.TestCase):
                 {
                     "speaker": "Poseł Dariusz Matecki",
                     "content": "Dziękuję bardzo. Panie Marszałku! Jestem niezwykle zadowolony, że tuż przed moim wystąpieniem pan tutaj przybył, ponieważ będę chciał również do pana skierować pytanie. Ale rozpocznijmy od tego, że przed chwilą oglądaliśmy wiadomości na neo-TVP, neo-„Wiadomości” o 19:30, z których Polacy nie dowiedzą się o tym, że w Unii Europejskiej, ponad głowami Polaków zdecydowano, że będziemy mieli relokację emigrantów z Afryki, m.in. do Polski. Coś, na co kiedyś zgodził się rząd Ewy Kopacz, również w tej chwili będzie niestety miało miejsce. Czyli kwestia bezpieczeństwa Polaków, moim zdaniem w tej chwili jest bardzo mocno zagrożona. Kolejna sprawa, o której się nie dowiedzieli mieszkańcy naszego kraju z wiadomości, to siłowe przejmowanie mediów publicznych. Panie Marszałku! Przez 3 ostatnie dni na żywo obserwowałem, jak policjanci otaczają siedzibę Telewizji Publicznej. Jak ponad setka policjantów wchodzi do siedziby Telewizji Publicznej. Mnie, ministra Warchoła, dwóch posłów odgradzało od jednego z wejść w Telewizji Publicznej ok. 40 policjantów i kilkunastu ochroniarzy. Czy tak mają wyglądać standardy mediów publicznych? Przyuważyliśmy pana Czyża, który nagrywał ukradkiem w studiu jakieś neo-„Wiadomości”. Pytanie, co on tam robił. Czy miał już umowę? Na moje pytania niestety nie odpowiedział, bo sobie poszedł. To samo dzisiaj, tutaj w Sejmie. Panie Marszałku! Może pan wie, kto to jest. Trzyma mikrofon z logo TVP. Pytałem go, jak się nazywa, nie odpowiedział. Chyba wszyscy dziennikarze i wszyscy wchodzący do Sejmu muszą mieć tutaj taką plakietkę. Niestety ten pan tego nie miał. Panie marszałku, będę się do pana zwracać z oficjalną prośbą, żeby wyjaśnić, kim jest ten człowiek, jak dostał się do Sejmu, czy ma akredytację dziennikarską, czy jest pracownikiem telewizji publicznej, czy może został wpuszczony (Dzwonek) przez posłów Koalicji Obywatelskiej? Bo tuż po moim pytaniu udał się do pokoju Koalicji Obywatelskiej. Dziękuję bardzo. (Oklaski) I panie marszałku, barierki przed Sejmem zniknęły, a teraz właściwie cała telewizja… poselskie 1072",
+                    # TODO: Tu na końcu jakieś "poselskie 1072" sie nie powinno pojawić
                 },
                 {
                     "speaker": "Marszałek",
@@ -2530,3 +2531,4 @@ class SessionReport(unittest.TestCase):
                 },
             ],
         )
+        self.assertEqual(obj["session_not_delivered_speeches"], [])
