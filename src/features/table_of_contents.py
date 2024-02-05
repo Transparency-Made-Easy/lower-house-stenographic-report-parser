@@ -462,7 +462,7 @@ def _get_lines_with_complex_info(lines_with_tags):
         elif item["type"] == "BREAK":
             lines_with_complex_info.append({"type": "BREAK"})
         elif item["type"] == "RESUME OBRADY":
-            lines_with_complex_info.append({"type": "RESUME OBRADY"})
+            lines_with_complex_info.append({"type": "RESUME OBRADY", "speakers": []})
         elif item["type"] == "RESUME POSIEDZENIE":
             lines_with_complex_info.append({"type": "RESUME POSIEDZENIE"})
         elif item["type"] == "VOTING":
