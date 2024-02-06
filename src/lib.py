@@ -1,5 +1,3 @@
-import re
-
 from src.features.sitting_agenda import get_sitting_agenda
 from src.features.session_not_delivered_speeches import (
     get_session_not_delivered_speeches,
@@ -45,6 +43,39 @@ def parse_session_report(file_path):
         "table_of_contents": table_of_contents,
         "content": get_content_text(pages_list, table_of_contents),
         "session_not_delivered_speeches": not_delivered_speeches,
+    }
+
+    return obj
+
+
+def parse_sitting_reports(session_reports):
+    keys = [
+        "sitting_day",
+        "session_date",
+        "session_start_time",
+        "session_end_time",
+        "session_intra_breaks_times",
+        "speaker_senior",
+        "speaker",
+        "vicespeakers",
+        "table_of_contents",
+        "content",
+        "session_not_delivered_speeches",
+    ]
+
+    purged_session_reports = [
+        {key: report[key] for key in keys} for report in session_reports
+    ]
+
+    obj = {
+        "term_number": session_reports[0]["term_number"],
+        "sitting_number": session_reports[0]["sitting_number"],
+        "sitting_start_date": session_reports[0]["session_date"],
+        "sitting_start_time": session_reports[0]["sitting_start_time"],
+        "sitting_end_date": session_reports[-1]["session_date"],
+        "sitting_end_time": session_reports[-1]["sitting_end_time"],
+        "sitting_agenda": session_reports[-1]["sitting_agenda"],
+        "session_reports": purged_session_reports,
     }
 
     return obj
