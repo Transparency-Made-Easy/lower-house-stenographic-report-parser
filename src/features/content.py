@@ -3,13 +3,8 @@ import re
 from src.custom_json import obj2pretty_json
 
 
-def get_content_text(pages, header_names):
-    header_names.append("SPIS TREŚCI")
-    header_names.append("Porządek dzienny")
-    header_names = [item.replace(" ", r"[\s\n]+") for item in header_names]
-
-    # print(header_names)
-    # exit()
+def get_content_text(pages, table_of_contents):
+    header_names = get_header_names(table_of_contents)
 
     start, end = get_content_page_range(pages)
     text = []
@@ -27,10 +22,6 @@ def get_content_text(pages, header_names):
             page = page[match.start() :]
 
         page = page.strip()
-
-        # How to substitite it with the same but preceded by \n\n?
-        # I thought like this, but i dont know what next: page = re.sub(r"^.*:$", "", page)
-        # page = re.sub(r"^.*:$", lambda match: "\n\n" + match.group(0), page)
 
         if len(text) > 0:
             speaker = text[-1]["speaker"]
@@ -205,6 +196,24 @@ def get_content_text(pages, header_names):
 
     # print(obj2pretty_json(new_result))
     return new_result
+
+
+def get_header_names(table_of_contents):
+    header_names = list(
+        set(
+            [
+                re.sub(
+                    r"Punkt\s+\d+.\s+porządku\s+dziennego:\s*", "", item["name"]
+                ).strip()
+                for item in table_of_contents
+                if item["type"] == "HEADER"
+            ]
+        )
+    )
+    header_names.append("SPIS TREŚCI")
+    header_names.append("Porządek dzienny")
+    header_names = [item.replace(" ", r"[\s\n]+") for item in header_names]
+    return header_names
 
     # print(obj2pretty_json(text))
     #     page = merge_blocks(page)

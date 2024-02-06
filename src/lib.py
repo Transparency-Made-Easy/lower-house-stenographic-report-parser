@@ -27,19 +27,6 @@ def report_to_obj(file_path):
     speakers = get_speaker_of_the_session(pages_dict)
     table_of_contents = get_table_of_contents(pages_dict, speakers[1])
 
-    # TODO: Extract this logic
-    header_names = list(
-        set(
-            [
-                re.sub(
-                    r"Punkt\s+\d+.\s+porządku\s+dziennego:\s*", "", item["name"]
-                ).strip()
-                for item in table_of_contents
-                if item["type"] == "HEADER"
-            ]
-        )
-    )
-
     obj = {
         "term_number": get_term(pages_dict[0]),
         "sitting_number": get_sitting_number(pages_dict[0]),
@@ -54,7 +41,7 @@ def report_to_obj(file_path):
         "speaker": speakers[1],
         "vicespeakers": speakers[2],
         "table_of_contents": table_of_contents,
-        "content": get_content_text(pages_list, header_names),
+        "content": get_content_text(pages_list, table_of_contents),
         "session_not_delivered_speeches": not_delivered_speeches,
     }
 
