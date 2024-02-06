@@ -6,6 +6,8 @@ from src.custom_json import obj2pretty_json
 def get_content_text(pages, header_names):
     header_names.append("SPIS TREŚCI")
     header_names.append("Porządek dzienny")
+    header_names = [item.replace(" ", r"[\s\n]+") for item in header_names]
+
     # print(header_names)
     # exit()
 
@@ -44,13 +46,11 @@ def get_content_text(pages, header_names):
             return page
 
         def remove_header(page: str, header_names: [str]) -> str:
-            expr = (
-                "("
-                + "|".join([re.escape(name.strip()) for name in header_names])
-                + r")\.?"
-            )
-            page = re.sub("^" + expr, "", page.strip(), flags=re.IGNORECASE).strip()
-            page = re.sub(expr + "$", "", page, flags=re.IGNORECASE).strip()
+            expr = "(" + "|".join([name for name in header_names]) + r")\s*\.?\s*"
+            page = re.sub(
+                "^" + expr, "", page.strip(), flags=re.IGNORECASE | re.DOTALL
+            ).strip()
+            page = re.sub(expr + "$", "", page, flags=re.IGNORECASE | re.DOTALL).strip()
             return page
 
         page = remove_session_number(page)
@@ -76,6 +76,7 @@ def get_content_text(pages, header_names):
         page = re.sub(r"^\s*\d+\s*\n?\s*", "", page)
         page = re.sub(r"\s*\)[\s\n]*\.$", ")", page).strip()
         page = re.sub(r"\.+$", ".", page).strip()
+        page = remove_header(page, header_names)
 
         page = "\n".join(
             [line.strip() for line in page.split("\n") if len(line.strip()) > 0]
