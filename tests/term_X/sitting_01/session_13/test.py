@@ -1,6 +1,6 @@
 import unittest
 from src.custom_json import obj2pretty_json
-from src.lib import report_to_obj
+from src.lib import parse_session_report
 from datetime import time
 from tests.utils import get_file_path_in_same_folder
 
@@ -8,7 +8,7 @@ from tests.utils import get_file_path_in_same_folder
 class SessionReport(unittest.TestCase):
     def test(self):
         file_path = get_file_path_in_same_folder(__file__, "01_m_ksiazka.pdf")
-        obj = report_to_obj(file_path)
+        obj = parse_session_report(file_path)
         # print(obj2pretty_json(obj))
         # exit()
 
@@ -2531,3 +2531,338 @@ class SessionReport(unittest.TestCase):
             ],
         )
         self.assertEqual(obj["session_not_delivered_speeches"], [])
+        self.assertEqual(
+            obj["sitting_agenda"],
+            [
+                {
+                    "number": 1,
+                    "legislative_documents": [],
+                    "content": "Wybór marszałka Sejmu Rzeczypospolitej Polskiej.",
+                },
+                {
+                    "number": 2,
+                    "legislative_documents": ["1", "2"],
+                    "content": "Poselskie projekty uchwał w sprawie ustalenia liczby wicemarszałków Sejmu Rzeczypospolitej Polskiej.",
+                },
+                {
+                    "number": 3,
+                    "legislative_documents": ["3", "4", "5", "6", "7", "8"],
+                    "content": "Wybór wicemarszałków Sejmu Rzeczypospolitej Polskiej.",
+                },
+                {
+                    "number": 4,
+                    "legislative_documents": ["9"],
+                    "content": "Wybór sekretarzy Sejmu.",
+                },
+                {
+                    "number": 5,
+                    "legislative_documents": ["11"],
+                    "content": "Wybór składu osobowego Komisji Regulaminowej, Spraw Poselskich i Immunitetowych.",
+                },
+                {
+                    "number": 6,
+                    "legislative_documents": ["10"],
+                    "content": "Pierwsze czytanie przedstawionego przez Prezydium Sejmu projektu uchwały w sprawie ustalenia liczby członków Komisji do Spraw Służb Specjalnych.",
+                },
+                {
+                    "number": 7,
+                    "legislative_documents": [
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                    ],
+                    "content": "Wybór posłów-członków Krajowej Rady Sądownictwa.",
+                },
+                {
+                    "number": 8,
+                    "legislative_documents": ["20"],
+                    "content": "Wybór składów osobowych komisji sejmowych.",
+                },
+                {
+                    "number": 9,
+                    "legislative_documents": ["21"],
+                    "content": "Wybór składu osobowego Komisji do Spraw Unii Europejskiej.",
+                },
+                {
+                    "number": 10,
+                    "legislative_documents": ["22"],
+                    "content": "Wybór składu osobowego Komisji Etyki Poselskiej.",
+                },
+                {
+                    "number": 11,
+                    "legislative_documents": ["23"],
+                    "content": "Wybór składu osobowego Komisji do Spraw Służb Specjalnych.",
+                },
+                {
+                    "number": 12,
+                    "legislative_documents": [
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                    ],
+                    "content": "Wybór członków Trybunału Stanu.",
+                },
+                {
+                    "number": 13,
+                    "legislative_documents": ["31"],
+                    "content": "Pierwsze czytanie obywatelskiego projektu ustawy o zmianie ustawy o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych.",
+                },
+                {
+                    "number": 14,
+                    "legislative_documents": ["52", "68"],
+                    "content": "Powołanie Rzecznika Praw Dziecka.",
+                },
+                {
+                    "number": 15,
+                    "legislative_documents": ["53", "54", "60", "61"],
+                    "content": "Powołanie członka Państwowej Komisji do spraw przeciwdziałania wykorzystaniu seksualnemu małoletnich poniżej lat 15.",
+                },
+                {
+                    "number": 16,
+                    "legislative_documents": ["64"],
+                    "content": "Pierwsze czytanie przedstawionego przez Prezydium Sejmu projektu uchwały w sprawie powołania i wyboru składu osobowego Komisji Nadzwyczajnej do spraw zmian w kodyfikacjach.",
+                },
+                {
+                    "number": 17,
+                    "legislative_documents": ["63", "67", "67-A"],
+                    "content": "Sprawozdanie Komisji Gospodarki i Rozwoju o poselskim projekcie ustawy o zmianie ustawy o ograniczeniu handlu w niedziele i święta oraz niektóre inne dni.",
+                },
+                {
+                    "number": 18,
+                    "legislative_documents": ["58"],
+                    "content": "Pierwsze czytanie poselskiego projektu uchwały w sprawie powołania Komisji Śledczej do zbadania legalności, prawidłowości oraz celowości działań podjętych w celu przygotowania i przeprowadzenia wyborów Prezydenta Rzeczypospolitej Polskiej w 2020 roku w formie głosowania korespondencyjnego.",
+                },
+                {
+                    "number": 19,
+                    "legislative_documents": ["57"],
+                    "content": "Pierwsze czytanie poselskiego projektu uchwały w sprawie powołania Komisji Śledczej do zbadania legalności, prawidłowości oraz celowości czynności operacyjno-rozpoznawczych podejmowanych m.in. z wykorzystaniem oprogramowania Pegasus przez członków Rady Ministrów, służby specjalne, Policję, organy kontroli skarbowej oraz celno-skarbowej w okresie od dnia 16 listopada 2015 r. do dnia 20 listopada 2023 r.",
+                },
+                {
+                    "number": 20,
+                    "legislative_documents": ["56"],
+                    "content": "Pierwsze czytanie poselskiego projektu uchwały w sprawie powołania Komisji Śledczej do zbadania legalności, prawidłowości oraz celowości działań, a także występowania nadużyć, zaniedbań i zaniechań w zakresie legalizacji pobytu cudzoziemców na terytorium Rzeczypospolitej Polskiej w okresie od dnia 1 stycznia 2019 r. do dnia 20 listopada 2023 r.",
+                },
+                {
+                    "number": 21,
+                    "legislative_documents": ["33"],
+                    "content": "Pierwsze czytanie obywatelskiego projektu ustawy o zmianie ustawy o sposobie ustalania najniższego wynagrodzenia zasadniczego niektórych pracowników zatrudnionych w podmiotach leczniczych.",
+                },
+                {
+                    "number": 22,
+                    "legislative_documents": ["31", "69", "69-A"],
+                    "content": "Sprawozdanie Komisji Zdrowia o obywatelskim projekcie ustawy o zmianie ustawy o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych.",
+                },
+                {
+                    "number": 23,
+                    "legislative_documents": [],
+                    "content": "Informacja Prezesa Rady Ministrów w sprawie protestów polskich transportowców i rolników na granicy polsko-ukraińskiej.",
+                },
+                {
+                    "number": 24,
+                    "legislative_documents": ["62"],
+                    "content": "Odwołanie członków Państwowej Komisji do spraw badania wpływów rosyjskich na bezpieczeństwo wewnętrzne Rzeczypospolitej Polskiej w latach 2007–2022.",
+                },
+                {
+                    "number": 25,
+                    "legislative_documents": ["70"],
+                    "content": "Zmiany w składach osobowych komisji sejmowych.",
+                },
+                {
+                    "number": 26,
+                    "legislative_documents": ["76"],
+                    "content": "Wybór uzupełniający do składu osobowego Komisji do Spraw Unii Europejskiej.",
+                },
+                {
+                    "number": 27,
+                    "legislative_documents": [],
+                    "content": "Ślubowanie członka Państwowej Komisji do spraw przeciwdziałania wykorzystaniu seksualnemu małoletnich poniżej lat 15.",
+                },
+                {
+                    "number": 28,
+                    "legislative_documents": ["71"],
+                    "content": "Pierwsze czytanie rządowego projektu ustawy o zmianie ustaw w celu wsparcia odbiorców energii elektrycznej, paliw gazowych i ciepła oraz niektórych innych ustaw.",
+                },
+                {
+                    "number": 29,
+                    "legislative_documents": ["72", "72-A"],
+                    "content": "Pierwsze czytanie poselskiego projektu ustawy o zmianie ustaw w celu wsparcia odbiorców energii elektrycznej, paliw gazowych i ciepła oraz niektórych innych ustaw.",
+                },
+                {
+                    "number": 30,
+                    "legislative_documents": ["74", "121"],
+                    "content": "Sprawozdanie Komisji do Spraw Energii, Klimatu i Aktywów Państwowych oraz Komisji Finansów Publicznych o rządowym projekcie ustawy o zmianie ustawy o funkcjonowaniu górnictwa węgla kamiennego.",
+                },
+                {
+                    "number": 31,
+                    "legislative_documents": ["77"],
+                    "content": "Pierwsze czytanie przedstawionego przez Prezydium Sejmu projektu uchwały w sprawie zmiany Regulaminu Sejmu Rzeczypospolitej Polskiej.",
+                },
+                {
+                    "number": 32,
+                    "legislative_documents": ["58", "78"],
+                    "content": "Sprawozdanie Komisji Ustawodawczej o poselskim projekcie uchwały w sprawie powołania Komisji Śledczej do zbadania legalności, prawidłowości oraz celowości działań podjętych w celu przygotowania i przeprowadzenia wyborów Prezydenta Rzeczypospolitej Polskiej w 2020 roku w formie głosowania korespondencyjnego.",
+                },
+                {
+                    "number": 33,
+                    "legislative_documents": ["72", "72-A", "88"],
+                    "content": "Sprawozdanie Komisji do Spraw Energii, Klimatu i Aktywów Państwowych oraz Komisji Finansów Publicznych o poselskim projekcie ustawy o zmianie ustaw w celu wsparcia odbiorców energii elektrycznej, paliw gazowych i ciepła oraz niektórych innych ustaw.",
+                },
+                {
+                    "number": 34,
+                    "legislative_documents": ["90"],
+                    "content": "Wybór Przewodniczącego Państwowej Komisji do spraw przeciwdziałania wykorzystaniu seksualnemu małoletnich poniżej lat 15.",
+                },
+                {
+                    "number": 35,
+                    "legislative_documents": ["89"],
+                    "content": "Zmiany w składach osobowych komisji sejmowych.",
+                },
+                {
+                    "number": 36,
+                    "legislative_documents": [],
+                    "content": "Przedstawienie przez Prezesa Rady Ministrów programu działania Rady Ministrów z wnioskiem o udzielenie jej wotum zaufania.",
+                },
+                {
+                    "number": 37,
+                    "legislative_documents": ["95"],
+                    "content": "Wybór Prezesa Rady Ministrów.",
+                },
+                {
+                    "number": 38,
+                    "legislative_documents": ["96"],
+                    "content": "Przedstawienie przez Prezesa Rady Ministrów programu działania oraz składu Rady Ministrów wraz z wnioskiem w sprawie wyboru członków Rady Ministrów.",
+                },
+                {
+                    "number": 39,
+                    "legislative_documents": ["91"],
+                    "content": "Wybór uzupełniający do składu osobowego Komisji do Spraw Unii Europejskiej.",
+                },
+                {
+                    "number": 40,
+                    "legislative_documents": ["93"],
+                    "content": "Wybór składu osobowego Komisji Śledczej do zbadania legalności, prawidłowości oraz celowości działań podjętych w celu przygotowania i przeprowadzenia wyborów Prezydenta Rzeczypospolitej Polskiej w 2020 roku w formie głosowania korespondencyjnego.",
+                },
+                {
+                    "number": 41,
+                    "legislative_documents": ["56", "80"],
+                    "content": "Sprawozdanie Komisji Ustawodawczej o poselskim projekcie uchwały w sprawie powołania Komisji Śledczej do zbadania legalności, prawidłowości oraz celowości działań, a także występowania nadużyć, zaniedbań i zaniechań w zakresie legalizacji pobytu cudzoziemców na terytorium Rzeczypospolitej Polskiej w okresie od dnia 1 stycznia 2019 r. do dnia 20 listopada 2023 r.",
+                },
+                {
+                    "number": 42,
+                    "legislative_documents": ["92", "94"],
+                    "content": "Sprawozdanie Komisji Cyfryzacji, Innowacyjności i Nowoczesnych Technologii o poselskim projekcie ustawy o zmianie ustawy o doręczeniach elektronicznych.",
+                },
+                {
+                    "number": 43,
+                    "legislative_documents": ["120"],
+                    "content": "Wybór uzupełniający do składu osobowego Komisji do Spraw Unii Europejskiej.",
+                },
+                {
+                    "number": 44,
+                    "legislative_documents": ["119"],
+                    "content": "Zmiany w składach osobowych komisji sejmowych.",
+                },
+                {
+                    "number": 45,
+                    "legislative_documents": ["117"],
+                    "content": "Pierwsze czytanie poselskiego projektu uchwały w sprawie przywrócenia ładu prawnego oraz bezstronności i rzetelności mediów publicznych oraz Polskiej Agencji Prasowej.",
+                },
+                {
+                    "number": 46,
+                    "legislative_documents": ["106", "116"],
+                    "content": "Sprawozdanie Komisji Polityki Społecznej i Rodziny o poselskim projekcie ustawy o szczególnych rozwiązaniach w celu zachowania ważności niektórych orzeczeń o niepełnosprawności oraz orzeczeń o stopniu niepełnosprawności.",
+                },
+                {
+                    "number": 47,
+                    "legislative_documents": [],
+                    "content": "Ślubowanie Rzecznika Praw Dziecka.",
+                },
+                {
+                    "number": 48,
+                    "legislative_documents": ["122"],
+                    "content": "Przedstawiony przez Prezydium Sejmu projekt uchwały w sprawie uczczenia 100. rocznicy urodzin Marszałka Sejmu I kadencji Wiesława Chrzanowskiego.",
+                },
+                {
+                    "number": 49,
+                    "legislative_documents": ["126"],
+                    "content": "Zmiany w składach osobowych komisji sejmowych.",
+                },
+                {
+                    "number": 50,
+                    "legislative_documents": ["118", "118-A", "118-B"],
+                    "content": "Pierwsze czytanie poselskiego projektu uchwały w sprawie usunięcia skutków kryzysu konstytucyjnego w kontekście pozycji ustrojowej oraz funkcji Krajowej Rady Sądownictwa w demokratycznym państwie prawnym.",
+                },
+                {
+                    "number": 51,
+                    "legislative_documents": ["125"],
+                    "content": "Pierwsze czytanie rządowego projektu ustawy budżetowej na rok 2024.",
+                },
+                {
+                    "number": 53,
+                    "legislative_documents": [
+                        "97",
+                        "98",
+                        "99",
+                        "100",
+                        "101",
+                        "102",
+                        "103",
+                        "109",
+                        "110",
+                        "111",
+                        "112",
+                        "113",
+                        "114",
+                        "115",
+                    ],
+                    "content": "Wskazanie członków Państwowej Komisji Wyborczej.",
+                },
+                {
+                    "number": 54,
+                    "legislative_documents": ["129"],
+                    "content": "Wybór składu osobowego Komisji Śledczej do zbadania legalności, prawidłowości oraz celowości działań, a także występowania nadużyć, zaniedbań i zaniechań w zakresie legalizacji pobytu cudzoziemców na terytorium Rzeczypospolitej Polskiej w okresie od dnia 12 listopada 2019 r. do dnia 20 listopada 2023 r.",
+                },
+                {
+                    "number": 55,
+                    "legislative_documents": ["127", "130"],
+                    "content": "Sprawozdanie Komisji Finansów Publicznych o rządowym projekcie ustawy o zmianie ustawy o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2023.",
+                },
+                {
+                    "number": 56,
+                    "legislative_documents": [
+                        "128",
+                        "128-A",
+                        "128-B",
+                        "128-BA",
+                        "128-C",
+                        "131",
+                    ],
+                    "content": "Sprawozdanie Komisji Finansów Publicznych o rządowym projekcie ustawy o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2024.",
+                },
+                {
+                    "number": 57,
+                    "legislative_documents": ["137"],
+                    "content": "Zmiany w składach osobowych komisji sejmowych.",
+                },
+            ],
+        )

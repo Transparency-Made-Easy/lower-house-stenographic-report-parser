@@ -1,5 +1,6 @@
 import re
 
+from src.features.sitting_agenda import get_sitting_agenda
 from src.features.session_not_delivered_speeches import (
     get_session_not_delivered_speeches,
 )
@@ -18,7 +19,7 @@ from src.features.term import get_term
 from src.pdf import get_pages, pdf2text
 
 
-def report_to_obj(file_path):
+def parse_session_report(file_path):
     pages_dict = get_pages(file_path)
     pages_list = pdf2text(file_path)
 
@@ -33,6 +34,7 @@ def report_to_obj(file_path):
         "sitting_day": get_sitting_day(pages_list),
         "sitting_start_time": get_sitting_start_time(pages_list),
         "sitting_end_time": get_sitting_end_time(pages_list),
+        "sitting_agenda": get_sitting_agenda(pages_list),
         "session_date": get_session_date(pages_dict[0]),
         "session_start_time": get_session_start_time(pages_list),
         "session_end_time": get_session_end_time(pages_list),

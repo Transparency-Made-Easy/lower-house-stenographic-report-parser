@@ -1,6 +1,6 @@
 import unittest
 from src.custom_json import obj2pretty_json
-from src.lib import report_to_obj
+from src.lib import parse_session_report
 from datetime import time
 from tests.utils import get_file_path_in_same_folder
 
@@ -8,7 +8,7 @@ from tests.utils import get_file_path_in_same_folder
 class SessionReport(unittest.TestCase):
     def test(self):
         file_path = get_file_path_in_same_folder(__file__, "01_a_ksiazka.pdf")
-        obj = report_to_obj(file_path)
+        obj = parse_session_report(file_path)
         # print(obj2pretty_json(obj))
         # exit()
 
@@ -1796,3 +1796,4 @@ class SessionReport(unittest.TestCase):
             ],
         )
         self.assertEqual(obj["session_not_delivered_speeches"], [])
+        self.assertEqual(obj["sitting_agenda"], None)
